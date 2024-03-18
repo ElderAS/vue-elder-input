@@ -47,7 +47,7 @@
           </slot>
         </div>
         <label v-if="hasValidation" :for="id" class="elder-input__validation">
-          <font-awesome-icon :icon="['fas', validComp ? 'check-circle' : 'times-circle']" />
+          <Icon :icon="['fas', validComp ? 'check-circle' : 'times-circle']" />
         </label>
         <label :for="id" v-if="hasSuffix" class="elder-input__suffix">
           <slot name="suffix">{{ suffix }}</slot>
@@ -63,12 +63,10 @@
 </template>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Icon from '@kvass/vue2-icon'
 import { IMaskComponent } from 'vue-imask'
 import { AttributeBoolean } from './utils'
 import InputComponent from './Input'
-
-import './icons'
 
 export default {
   props: {
@@ -190,7 +188,7 @@ export default {
     this.id = this._uid
   },
   components: {
-    FontAwesomeIcon,
+    Icon,
     IMaskComponent,
   },
 }
